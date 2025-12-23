@@ -2,7 +2,6 @@ package br.com.github.infrastructure.adapters.output.mapper;
 
 import br.com.github.domain.model.Wallet;
 import br.com.github.infrastructure.adapters.output.database.entity.WalletEntity;
-import br.com.github.infrastructure.utils.Utils;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 
