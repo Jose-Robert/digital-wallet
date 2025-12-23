@@ -6,19 +6,19 @@ import br.com.github.application.port.input.model.WalletOutput;
 import br.com.github.application.port.output.OpenWalletPort;
 import br.com.github.domain.enums.StatusType;
 import br.com.github.domain.model.Wallet;
+import br.com.github.infrastructure.annotation.UseCase;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
 import static br.com.github.application.mapper.WalletOutputMapper.fromDomain;
 
-@Service
+@UseCase
 @AllArgsConstructor
 public class OpenWalletUseCaseImpl implements IOpenWalletUseCase {
 
-    private OpenWalletPort openWalletPort;
+    private OpenWalletPort port;
 
     @Transactional
     @Override
@@ -30,6 +30,6 @@ public class OpenWalletUseCaseImpl implements IOpenWalletUseCase {
                 .balance(new BigDecimal("0.0"))
                 .status(StatusType.ACTIVE)
                 .build();
-        return fromDomain(openWalletPort.openWallet(wallet));
+        return fromDomain(port.openWallet(wallet));
     }
 }
