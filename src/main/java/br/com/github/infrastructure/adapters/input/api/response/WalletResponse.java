@@ -26,6 +26,6 @@ public class WalletResponse implements Serializable {
     @Schema(description = "Email do titular da carteira", example = "wallet@service.com.br")
     private String email;
 
-    @Schema(description = "CPF do titular da carteira", example = "123.456.789-00")
+    @Schema(description = "CPF do titular da carteira", example = "***.456.789-**")
     private String cpf;
 }
